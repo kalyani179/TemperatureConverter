@@ -1,4 +1,3 @@
-let flag = 0;
 $(document).ready(function() {
     $(".convert").click(function() {
         event.preventDefault();
