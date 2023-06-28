@@ -1,22 +1,47 @@
 let flag = 0;
 $(document).ready(function() {
     $(".convert").click(function() {
+        event.preventDefault();
         if ($("#Fahrenheit").val()) {
-            var f = ($("#Fahrenheit").val());
-            $('#Celsius').val("9893");
-            $("#Kelvin").val("49584");
-            $("#Rankine").val("89908");
+            var f = Number($("#Fahrenheit").val());
+            var c = (f - 32) * (5 / 9);
+            var k = c + 273.15;
+            var r = f + 459.67;
+            $('#Celsius').val(c.toFixed(4));
+            $("#Kelvin").val(k.toFixed(4));
+            $("#Rankine").val(r.toFixed(4));
         } else if ($("#Celsius").val()) {
-            var c = $("#Celsius").val();
+            var c = Number($("#Celsius").val());
+            var f = (c * (9 / 5)) + 32;
+            var k = c + 273.15;
+            var r = f + 459.67;
+            $('#Fahrenheit').val(f.toFixed(4));
+            $("#Kelvin").val(k.toFixed(4));
+            $("#Rankine").val(r.toFixed(4));
 
         } else if ($("#Kelvin").val()) {
-            var k = $("#Kelvin").val();
+            var k = Number($("#Kelvin").val());
+            var c = k - 273.15;
+            var f = (c * (9 / 5)) + 32;
+            var r = f + 459.67;
+            $('#Celsius').val(c.toFixed(4));
+            $("#Fahrenheit").val(f.toFixed(4));
+            $("#Rankine").val(r.toFixed(4));
 
         } else if ($("#Rankine").val()) {
-            var r = $("#Rankine").val();
-
+            var r = Number($("#Rankine").val());
+            var f = r - 459.67;
+            var c = (f - 32) * (5 / 9);
+            var k = c + 273.15;
+            $("#Fahrenheit").val(f.toFixed(4));
+            $('#Celsius').val(c.toFixed(4));
+            $("#Kelvin").val(k.toFixed(4));
         } else {
-            $("#Celsius").val("98545");
+            alert("Please Enter a Number to Convert");
         }
     })
+})
+
+$(".reset").click(function() {
+    location.reload(true);
 })
