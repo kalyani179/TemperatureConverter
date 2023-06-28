@@ -1,0 +1,38 @@
+body {
+    background-color: aliceblue;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+label {
+    margin: 1em;
+    font-size: larger;
+}
+
+input {
+    border: 2px solid black;
+    margin-left: 5px;
+    padding: 0.2em;
+    font-size: larger;
+}
+
+.reset {
+    margin-right: 17em;
+}
+
+.reset,
+.convert {
+    margin-top: 3em;
+}
+
+.temperature-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
+}
